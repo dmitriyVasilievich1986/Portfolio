@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux'
 
-export default class GetApi extends Component {
+class GetApi extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -24,15 +25,17 @@ export default class GetApi extends Component {
     }
     render() {
         return (
-            <div className="container">
+            < div className="container" >
                 <div className="row text-center">
                     <div className="col-8">
-                        <h4>Getting API</h4>
-                        <p style={{ "textIndent": "2rem" }}>By using "Axios", "Fetch" or "Python requests" you can get data from server.
-                                You can use received data, for example, to make weather application.</p>
+                        <h4>{this.props.language === "en" ? "Getting API" : "Получение ответа от API"}</h4>
+                        <p style={{ "textIndent": "2rem" }}>
+                            {this.props.language === "en" ?
+                                "By using 'Axios', 'Fetch' or 'Python requests' you can get data from server.You can use received data, for example, to make weather application." :
+                                "Использую 'Axios', 'Fetch' or 'Python requests' можно получать данные с сервера. Вы можеете использовать полученные данные, например чтобы сделать приложение для отсдеживания погоды."}</p>
                         <div className="d-inline-flex">
                             <img src={this.state.weather} />
-                            <h5 className="p-3 mt-3">{this.state.city}: {this.state.temperature}</h5>
+                            <h5 className="p-3 mt-3">{this.props.language === "en" ? "Moscow" : "Москва"}: {this.state.temperature}</h5>
                         </div>
                         <div className='col-4' />
                     </div>
@@ -41,3 +44,9 @@ export default class GetApi extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    language: state.properties.language
+})
+
+export default connect(mapStateToProps, null)(GetApi)
