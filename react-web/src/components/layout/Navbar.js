@@ -37,7 +37,7 @@ class Navbar extends Component {
                         </ul>
                         <div className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {this.props.language === "en" ? Language : "Язык"}</a>
+                                {this.props.language === "en" ? "Language" : "Язык"}</a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a className="dropdown-item" onClick={e => this.props.changeLanguage("en")}>En</a>
                                 <a className="dropdown-item" onClick={e => this.props.changeLanguage("ru")}> Ru</a>
