@@ -12,17 +12,6 @@ class GetApi extends Component {
             apikey: "f70cab3c5a01bf814360b55b092a0057"
         }
     }
-    componentDidMount() {
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&appid=${this.state.apikey}&units=metric`)
-            .then(data => {
-                const newData = data.data
-                this.setState({
-                    temperature: parseInt(newData.main.temp),
-                    weather: `http://openweathermap.org/img/wn/${newData.weather[0].icon}@2x.png`
-                })
-            })
-            .catch(err => console.log(err))
-    }
     render() {
         return (
             < div className="container" >

@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { changeLanguage, getLanguage } from '../actions/mainActions'
+import Avatar from '@material-ui/core/Avatar'
 
 class Navbar extends Component {
     constructor(props) {
         super(props)
     }
-    componentWillMount() {
+    componentDidMount() {
         this.props.getLanguage()
     }
     render() {
         return (
-            <nav className="navbar navbar-expand-sm navbar-light bg-light">
+            <nav className="navbar navbar-dark navbar-expand-sm sticky-top" style={{ "backgroundColor": "#29445f" }}>
                 <div className="container">
-                    <a className="navbar-brand" href="/">
-                        <img src="/static/feather.svg" />
+                    <Avatar src="/static/photo.jpg" />
+                    <a className="navbar-brand ml-2" href="/">
                         {this.props.language === "en" ? "Dmitriy" : "Дмитрий"}</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
