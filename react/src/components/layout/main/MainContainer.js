@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class MainContainer extends Component {
     render() {
         return (
-            <div>
+            <div className="container">
                 <div className="card-deck mt-4" style={{ "marginBottom": "5cm", "height": "10cm" }}>
                     <div className="card">
                         <div className="card-header text-center">
