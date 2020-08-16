@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Main, Navbar, Api, Frontend, Reference } from './layout'
+import { Main, Navbar, Api, Frontend, Reference, Footage } from './layout'
 import { Provider } from 'react-redux'
 import store from './store'
 

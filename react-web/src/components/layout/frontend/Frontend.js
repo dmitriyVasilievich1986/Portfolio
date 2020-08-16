@@ -3,7 +3,7 @@ import Timer from './Timer'
 
 function Frontend() {
     return (
-        <div className="list-group">
+        <div className="list-group" style={{ "marginBottom": "17cm" }}>
             <ul className="list-group list-group-flush">
                 <Fragment>
                     <li className="list-group-item mt-3"><Timer /></li>

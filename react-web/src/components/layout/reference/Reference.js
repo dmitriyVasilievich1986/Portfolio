@@ -12,7 +12,7 @@ class Reference extends Component {
     }
     render() {
         return (
-            <div className="container mt-4">
+            <div className="container mt-4" style={{ "marginBottom": "3cm" }}>
                 <div className="card-body">
                     <h1 className="text-center">{this.props.language === "en" ? "Links to my other work:" : "Ссылки на мои работы:"}</h1>
                 </div>
